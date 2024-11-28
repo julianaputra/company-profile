@@ -28,6 +28,11 @@ contactForm.addEventListener("submit", async (e) => {
     if (!response.ok) {
       throw new Error("Failed to insert data");
     }
+    if(response.ok){
+        Swal.fire('Selamat!', 'Data Anda berhasil terkirim', 'success');
+    }else{
+        Swal.fire('Oooopss!', 'Sepertinya ada yang salah', 'error');
+    }
 
     responseMessage.textContent = "Message sent successfully!";
     responseMessage.classList.remove("hidden");
